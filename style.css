@@ -1,11 +1,14 @@
 * {
     box-sizing: border-box;
 }
-body {
+html,body {
     margin: 0;
     background: #e9d8b2;
     color: #432f1d;
     font-family: Georgia, "Times New Roman", serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 /* intro screen */
@@ -134,23 +137,27 @@ margin-bottom: 25px;
     width: 100%;
     height: 100vh;
     padding: 0;
-    overflow: hidden;
     background: #241b12;
 }
 
 
+
+/* Full-screen exploration world */
 .map-world {
-    background:
-        radial-gradient(ellipse, #705334 0%, #392719 75%);
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
+/* Let the map fill the screen */
 .map-world > img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 0 12px #1d140c);
+    object-position: center;
 }
 
 
