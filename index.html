@@ -31,15 +31,36 @@
     </section>
     
     <!-- map screen -->
-<main id = "journey" class="journey hidden">
-    <h1> The Journey Home</h1>
-    <p>Explore the places and choices that shaped Odysseus and his journey home</p>
 
-    <div class="map">
-        <img src="map.png" alt="Antique map of Greece and surrounding areas">
+<main id="journey" class="journey hidden">
+    <div class="map-world">
+        <img src="map.png" alt="Map of Odysseus's journey">
+
+        <div class="map-heading">
+            <h1>The Journey Home</h1>
+            <p>Every choice has a consequence.</p>
+        </div>
+
+        <button class="map-marker troy" aria-label="Explore Troy">
+            <span class="marker-dot"></span>
+            <span class="marker-label">Troy</span>
+        </button>
+
+        <button class="map-marker cyclops" aria-label="Explore the Cyclops">
+            <span class="marker-dot"></span>
+            <span class="marker-label">Land of the Cyclopes</span>
+        </button>
+
+        <button class="map-marker circe" aria-label="Explore Circe's island">
+            <span class="marker-dot"></span>
+            <span class="marker-label">Circe's Island</span>
+        </button>
+
+        <button class="map-marker ithaca" aria-label="Explore Ithaca">
+            <span class="marker-dot"></span>
+            <span class="marker-label">Ithaca</span>
+        </button>
+
+        <div class="map-hint">✦ Select a location to explore ✦</div>
     </div>
 </main>
-    
-    <script src="odyssey.js"></script>
-</body>
-</html>

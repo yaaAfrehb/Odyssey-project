@@ -7,3 +7,278 @@ body {
     color: #432f1d;
     font-family: Georgia, "Times New Roman", serif;
 }
+
+/* intro screen */
+.intro {
+    min-height: 100vh;
+    padding: 45px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+background:
+radial-gradient(
+    ellipse at center,
+    #e9d8b2 0%,
+    #f4ecd8 50%,
+    #e9d8b2 100%
+);
+border: 10px double #987447;
+outline: 2px solid #987447;
+outline-offset: -18px;
+}
+
+/* small heading */
+.intro> p:first-child {
+font-size: 12px;
+letter-spacing: 5px;
+text-transform: uppercase;
+color: #80613b;
+margin-bottom: 25px;
+}
+
+/* decorative divider */
+.ornament {
+    color:#987447;
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* main title! */
+.intro h1 {
+    font-size: clamp(42px, 8vw, 82px);
+    font-weight: normal;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* subtitle */
+.intro h2 {
+    font-size: clamp(15px, 3vw, 24px);
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 18px;
+    color:#80613b;
+}
+
+/* tagline */
+.description {
+    font-size: 18px;
+    font-style:italic;
+    line-height: 1.7;
+    margin: 35px 0 12px;
+}
+
+/* intro description */
+.invitation {
+    max-width: 440px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #69513a;
+    margin: 8px 0 30px;
+}
+
+/* start button */
+.start-journey {
+    padding: 16px 28px;
+    background-color: #62462c;
+    color: #f8ebd0;
+    border: 1px solid #3f2b19;
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+    background-color 0.25s ease;
+    transform: transform 0.25s ease;
+}
+
+.start-journey:hover {
+    background-color: #80603c;
+    transform: scaleY(-3px);
+}
+
+.start-journey:focus-visible {
+    outline: 3px solid #987447;
+    outline-offset: 4px;
+}
+
+/* footer */
+.footer-text {
+    font-size: 9px;
+    line-height: 2;
+    letter-spacing: 2px;
+    color: #80613b;
+    margin-top: 40px;
+}
+
+/* screen change */
+.hidden {
+    display: none !important;
+}
+
+/* map screen */
+
+
+/* FULL-SCREEN GAME MAP */
+.journey {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+    background: #241b12;
+}
+
+.map-world {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.map-world > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #241b12;
+}
+
+/* TITLE OVERLAY */
+.map-heading {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: max-content;
+    max-width: 90%;
+    color: #f7e7c4;
+    text-shadow: 0 2px 8px #241b12;
+    pointer-events: none;
+}
+
+.map-heading h1 {
+    font-size: clamp(22px, 3vw, 38px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0 0 6px;
+}
+
+.map-heading p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* CLICKABLE MAP MARKERS */
+.map-marker {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    color: #fff0c9;
+    font-family: Georgia, serif;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.marker-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #b78b43;
+    border: 3px solid #fff0c9;
+    box-shadow: 0 0 0 5px #5d422b99,
+                0 0 18px #e7b95b;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.marker-label {
+    padding: 5px 9px;
+    background: #382819dd;
+    border: 1px solid #b78b43;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0.9;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.map-marker:hover .marker-dot {
+    transform: scale(1.4);
+    background: #ffe2a0;
+}
+
+.map-marker:hover .marker-label {
+    background: #75512b;
+    opacity: 1;
+}
+
+/* STARTER POSITIONS — ADJUST THESE */
+.troy {
+    left: 51%;
+    top: 37%;
+}
+
+.cyclops {
+    left: 67%;
+    top: 53%;
+}
+
+.circe {
+    left: 61%;
+    top: 66%;
+}
+
+.ithaca {
+    left: 30%;
+    top: 57%;
+}
+
+/* INSTRUCTION AT BOTTOM */
+.map-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f7e7c4;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0 2px 6px #241b12;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .map-heading {
+        top: 15px;
+    }
+
+    .map-heading p {
+        font-size: 11px;
+    }
+
+    .marker-label {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+
+    .marker-dot {
+        width: 13px;
+        height: 13px;
+    }
+}
