@@ -1,6 +1,12 @@
-body{
-    background-image: url('map.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    text-align: center;
+    color: white;
+    line-height: 98vh;
+    
 }
