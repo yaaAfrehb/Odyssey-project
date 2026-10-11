@@ -1,6 +1,9 @@
-body{
-    background-image: url('map.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: #e9d8b2;
+    color: #432f1d;
+    font-family: Georgia, "Times New Roman", serif;
 }
