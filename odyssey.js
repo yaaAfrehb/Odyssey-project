@@ -19,4 +19,6 @@ markers.forEach(marker => {
     });
 });
 
-document.getElementById("route-1").classList.add("revealed");
+document.querySelectorAll(".route-segment").forEach(segment => {
+    segment.classList.add("revealed");
+});
