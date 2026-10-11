@@ -18,3 +18,5 @@ markers.forEach(marker => {
         alert(`You selected ${location}! Your location details and choices will appear here.`);
     });
 });
+
+document.getElementById("route-1").classList.add("revealed");

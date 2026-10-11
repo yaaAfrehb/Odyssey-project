@@ -36,6 +36,24 @@
     <div class="map-world">
         <img src="map.png" alt="Map of Odysseus's journey">
 
+        
+    <svg class="journey-route"
+        viewBox="0 0 1407 1080"
+        preserveAspectRatio="none"
+        aria-hidden="true">
+
+        <!-- Troy to Lotus Eaters -->
+        <path id="route-1" class="route-segment"
+            d="M 716 310 Q 620 400 430 570"/>
+
+        <!-- Lotus Eaters to Cyclopes -->
+        <path id="route-2" class="route-segment"
+            d="M 430 570 Q 350 600 250 650"/>
+
+    </svg>
+
+
+    </div>
         <div class="map-heading">
             <h1>The Journey Home</h1>
             <p>Every choice has a consequence.</p>
@@ -43,7 +61,6 @@
 
         <button class="map-marker troy" aria-label="Explore Troy">
             <span class="marker-dot"></span>
-            <span class="marker-label">Troy</span>
         </button>
 
         <button class="map-marker cyclops" aria-label="Explore the Cyclops">
@@ -61,7 +78,12 @@
             <span class="marker-label">Ithaca</span>
         </button>
 
-        <div class="map-hint">✦ Select a location to explore ✦</div>
+        <button class="map-marker lotus" aria-label="Explore the Lotus Eaters">
+            <span class="marker-dot"></span>
+            <span class="marker-label">Lotus Eaters</span>
+        </button>
+
+        <div class="map-hint">✦ Select a location to explore ✦
     </div>
 </main>
     <script src="odyssey.js"></script>

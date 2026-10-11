@@ -11,7 +11,7 @@ html,body {
     overflow: hidden;
 }
 
-/* intro screen */
+
 .intro {
     min-height: 100vh;
     padding: 45px 24px;
@@ -34,7 +34,6 @@ outline: 2px solid #987447;
 outline-offset: -18px;
 }
 
-/* small heading */
 .intro> p:first-child {
 font-size: 12px;
 letter-spacing: 5px;
@@ -70,7 +69,6 @@ margin-bottom: 25px;
     color:#80613b;
 }
 
-/* tagline */
 .description {
     font-size: 18px;
     font-style:italic;
@@ -78,7 +76,7 @@ margin-bottom: 25px;
     margin: 35px 0 12px;
 }
 
-/* intro description */
+
 .invitation {
     max-width: 440px;
     font-size: 15px;
@@ -87,7 +85,7 @@ margin-bottom: 25px;
     margin: 8px 0 30px;
 }
 
-/* start button */
+
 .start-journey {
     padding: 16px 28px;
     background-color: #62462c;
@@ -113,7 +111,7 @@ margin-bottom: 25px;
     outline-offset: 4px;
 }
 
-/* footer */
+
 .footer-text {
     font-size: 9px;
     line-height: 2;
@@ -122,7 +120,6 @@ margin-bottom: 25px;
     margin-top: 40px;
 }
 
-/* screen change */
 .hidden {
     display: none !important;
 }
@@ -130,7 +127,7 @@ margin-bottom: 25px;
 /* map screen */
 
 
-/* FULL-SCREEN GAME MAP */
+
 .journey {
     position: fixed;
     inset: 0;
@@ -209,7 +206,7 @@ margin-bottom: 25px;
     height: 16px;
     border-radius: 50%;
     background: #b78b43;
-    border: 3px solid #fff0c9;
+    border: 1.5px solid #fff0c9;
     box-shadow: 0 0 0 5px #5d422b99,
                 0 0 18px #e7b95b;
     transition: transform 0.2s, background 0.2s;
@@ -235,10 +232,9 @@ margin-bottom: 25px;
     opacity: 1;
 }
 
-/* STARTER POSITIONS — ADJUST THESE */
 .troy {
-    left: 51%;
-    top: 37%;
+    left: 50.25%;
+    top: 30%;
 }
 
 .cyclops {
@@ -256,7 +252,12 @@ margin-bottom: 25px;
     top: 57%;
 }
 
-/* INSTRUCTION AT BOTTOM */
+.lotus {
+    left: 18%;
+    top: 54%;
+}
+
+
 .map-hint {
     position: absolute;
     bottom: 20px;
@@ -288,4 +289,45 @@ margin-bottom: 25px;
         width: 13px;
         height: 13px;
     }
+}
+
+
+.journey-route {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.map-marker {
+    z-index: 2;
+}
+
+.journey-route {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.route-segment {
+    fill: none;
+    stroke: #b78b43;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 10 12;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.route-segment.revealed {
+    opacity: 1;
+}
+
+.map-marker {
+    z-index: 2;
 }
