@@ -238,14 +238,14 @@ margin-bottom: 25px;
 
 .troy       { left: 50.05%; top: 28.57%; }
 .lotus      { left: 24%;  top: 58%; }
-.cyclops    { left: 76%; top: 52%; }
-.aeolus     { left: 23%; top: 43%; }
-.circe      { left: 67%; top: 64%; }
+.cyclops    { left: 40%; top: 90%; }
+.aeolus     { left: 42%; top: 80%; }
+.circe      { left: 30%; top: 65% }
 .underworld { left: 62%; top: 90%; }
-.scyllandcharybdis    { left: 88%; top: 48%; }
-.cattle     { left: 65%; top: 38%; }
+.scyllandcharybdis    { left: 57%; top: 80%; }
+.cattle     { left: 61%; top: 72%; }
 .calypso    { left: 25%; top: 70%; }
-.phaeacians { left: 18%; top: 40%; }
+.phaeacians { left: 24%; top: 41%; }
 .ithaca     { left: 29%; top: 51.5%; }
 
 .map-hint {
@@ -305,18 +305,19 @@ margin-bottom: 25px;
 }
 
 .route-segment {
-    fill: none;
-    stroke: #b78b43;
-    stroke-width: 5;
-    stroke-linecap: round;
-    stroke-dasharray: 10 12;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+  fill: none;
+  stroke: #b78b43;
+  stroke-width: 0.15;
+  stroke-linecap: round;
+  stroke-dasharray: 0.7 0.6;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
 .route-segment.revealed {
-    opacity: 1;
+  opacity: 1;
 }
+
 
 .map-marker {
     z-index: 2;
@@ -332,11 +333,28 @@ margin-bottom: 25px;
   background: #21170f;
   color: #e4c17a;
 }
+ 
+.map-world {
+  position: relative;
+}
 
-.left-panel,
-.right-panel {
-  border: 1px solid #9c7435;
-  padding: 20px;
-  text-align: center;
+.map-world img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.journey-route {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.map-marker {
+  position: absolute;
+  z-index: 2;
 }
 
