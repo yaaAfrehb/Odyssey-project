@@ -243,10 +243,10 @@ margin-bottom: 25px;
 .circe      { left: 30%; top: 65% }
 .underworld { left: 62%; top: 90%; }
 .scyllandcharybdis    { left: 56%; top: 80%; }
-.cattle     { left: 61%; top: 72%; }
-.calypso    { left: 23%; top: 56%; }
-.phaeacians { left: 24.5%; top: 41%; }
-.ithaca     { left: 29.5%; top: 51.5%; }
+.cattle     { left: 62%; top: 72%; }
+.calypso    { left: 22%; top: 58%; }
+.phaeacians { left: 24%; top: 41%; }
+.ithaca     { left: 28.5%; top: 51.2%; }
 
 .map-hint {
     position: absolute;
@@ -427,4 +427,25 @@ margin-bottom: 25px;
 
 .popup-choice:hover {
     background: #d7bd89;
+}
+
+.marker-dot.numbered-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff0c9;
+    background: #b78b43;
+    border: 2px solid #fff0c9;
+    box-shadow: 0 0 0 5px #5d422b99;
+}
+
+.map-marker.locked {
+    opacity: 0.25;
+    filter: grayscale(1);
+    pointer-events: none;
+    cursor: not-allowed;
 }

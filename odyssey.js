@@ -20,7 +20,8 @@ const stories = {
             "Strength and courage",
             "Intelligence and self-control",
             "Both, depending on the challenge"
-        ]
+        ],
+        correctAnswer: "Both, depending on the challenge"
     },
 
     "Explore the Lotus Eaters": {
@@ -30,7 +31,8 @@ const stories = {
         choices: [
             "Temptation can distract people from their goals",
             "The journey home is unimportant"
-        ]
+        ],
+        correctAnswer: "Temptation can distract people from their goals"
     },
 
     "Explore the Cyclops": {
@@ -40,7 +42,8 @@ const stories = {
         choices: [
             "Reveal his name to claim glory",
             "Stay anonymous to protect his crew"
-        ]
+        ],
+        correctAnswer: "Stay anonymous to protect his crew"
     },
 
     "Explore Aeolus's island": {
@@ -50,17 +53,19 @@ const stories = {
         choices: [
             "Suspicion and poor decisions can undo progress",
             "Warnings are never important"
-        ]
+        ],
+        correctAnswer: "Suspicion and poor decisions can undo progress"
     },
 
-    "Explore Circe's island": {
+    "Explore Circe's island(Aeaea)": {
         title: "Circe's Island",
         story: "Circe transforms Odysseus's men into pigs. With help from Hermes, Odysseus confronts her and saves his crew. They stay for a time before continuing their journey.",
         question: "Why does Odysseus eventually continue?",
         choices: [
             "He still wants to return home",
             "He has forgotten about Ithaca"
-        ]
+        ],
+        correctAnswer: "He still wants to return home"
     },
 
     "Explore the Underworld": {
@@ -70,7 +75,8 @@ const stories = {
         choices: [
             "Yes, knowledge prevents every mistake",
             "No, people must still make difficult decisions"
-        ]
+        ],
+        correctAnswer: "No, people must still make difficult decisions"
     },
 
     "See Scylla and Charybdis": {
@@ -80,7 +86,8 @@ const stories = {
         choices: [
             "Leaders sometimes face choices with no perfect solution",
             "Good leaders can always save everyone"
-        ]
+        ],
+        correctAnswer: "Leaders sometimes face choices with no perfect solution"
     },
 
     "Explore the Cattle of the Sun": {
@@ -90,7 +97,8 @@ const stories = {
         choices: [
             "Choices can have serious consequences",
             "Warnings never matter"
-        ]
+        ],
+        correctAnswer: "Choices can have serious consequences"
     },
 
     "Explore Calypso's island": {
@@ -100,7 +108,8 @@ const stories = {
         choices: [
             "His family and identity matter to him",
             "He believes home will have no challenges"
-        ]
+        ],
+        correctAnswer: "His family and identity matter to him"
     },
 
     "Explore the Phaeacians": {
@@ -110,7 +119,8 @@ const stories = {
         choices: [
             "Hospitality can help people in need",
             "Strangers never deserve kindness"
-        ]
+        ],
+        correctAnswer: "Hospitality can help people in need"
     },
 
     "Explore Ithaca": {
@@ -120,7 +130,8 @@ const stories = {
         choices: [
             "Whether revenge and justice are always the same",
             "Whether family and home are unimportant"
-        ]
+        ],
+        correctAnswer: "Whether revenge and justice are always the same"
     }
 };
 
@@ -134,6 +145,43 @@ const closeButton = document.getElementById("close-popup");
 
 // Map elements
 const markers = document.querySelectorAll(".map-marker");
+markers.forEach((marker, index) => {
+    const number = document.createElement("span");
+
+    number.className = "marker-number";
+    number.textContent = index + 1;
+
+    marker.prepend(number);
+});
+
+
+const journeyOrder = [
+    "Explore Troy",
+    "Explore the Lotus Eaters",
+    "Explore the Cyclops",
+    "Explore Aeolus's island",
+    "Explore Circe's island",
+    "Explore the Underworld",
+    "See Scylla and Charybdis",
+    "Explore the Cattle of the Sun",
+    "Explore Calypso's island",
+    "Explore the Phaeacians",
+    "Explore Ithaca"
+];
+
+let completedLocations = [];
+let currentLocation = "";
+
+// Lock every location except Troy
+markers.forEach(marker => {
+    const location = marker.getAttribute("aria-label");
+
+    if (location !== journeyOrder[0]) {
+        marker.classList.add("locked");
+    }
+});
+
+
 const mapHeading = document.querySelector(".map-heading");
 const mapHint = document.querySelector(".map-hint");
 
@@ -161,10 +209,27 @@ function showChoices(data) {
         button.className = "popup-choice";
         button.textContent = choice;
 
-        button.addEventListener("click", () => {
-            showFeedback(data);
-        });
+        
+        
+      
+        
+    button.addEventListener("click", () => {
+        if (choice === data.correctAnswer) {
+            button.textContent = "✓ " + choice + " — Correct!";
+            button.style.backgroundColor = "#6b9e68";
 
+            // Show the reflection after a short pause
+            setTimeout(() => {
+                showFeedback(data);
+            }, 800);
+
+        } else {
+            button.textContent = "✗ " + choice + " — Try again!";
+            button.style.backgroundColor = "#bd6960";
+        }
+    });
+
+  
         popupChoices.appendChild(button);
     });
 }
@@ -200,7 +265,8 @@ markers.forEach(marker => {
             console.warn("No story found for:", location);
             return;
         }
-
+        currentLocation = location;
+        
         popupTitle.textContent = data.title;
         popupStory.textContent = data.story;
 
@@ -212,9 +278,25 @@ markers.forEach(marker => {
 });
 
 // Close the popup and restore the map
+
 closeButton.addEventListener("click", () => {
     popup.classList.add("hidden");
     showMapElements();
+
+    if (!completedLocations.includes(currentLocation)) {
+        completedLocations.push(currentLocation);
+    }
+
+    const currentIndex = journeyOrder.indexOf(currentLocation);
+    const nextLocation = journeyOrder[currentIndex + 1];
+
+    if (nextLocation) {
+        markers.forEach(marker => {
+            if (marker.getAttribute("aria-label") === nextLocation) {
+                marker.classList.remove("locked");
+            }
+        });
+    }
 });
 
 // Reveal the route
