@@ -237,16 +237,16 @@ margin-bottom: 25px;
 }
 
 .troy       { left: 50.05%; top: 28.57%; }
-.lotus      { left: 24%;  top: 58%; }
+.lotus      { left: 24%;  top: 90%; }
 .cyclops    { left: 40%; top: 90%; }
 .aeolus     { left: 42%; top: 80%; }
 .circe      { left: 30%; top: 65% }
 .underworld { left: 62%; top: 90%; }
-.scyllandcharybdis    { left: 57%; top: 80%; }
+.scyllandcharybdis    { left: 56%; top: 80%; }
 .cattle     { left: 61%; top: 72%; }
-.calypso    { left: 25%; top: 70%; }
-.phaeacians { left: 24%; top: 41%; }
-.ithaca     { left: 29%; top: 51.5%; }
+.calypso    { left: 23%; top: 56%; }
+.phaeacians { left: 24.5%; top: 41%; }
+.ithaca     { left: 29.5%; top: 51.5%; }
 
 .map-hint {
     position: absolute;
