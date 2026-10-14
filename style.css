@@ -450,3 +450,16 @@ margin-bottom: 25px;
     cursor: not-allowed;
 }
 
+.next-button {
+    background-color: #b78b43;
+    color: #fff0c9;
+    border: 2px solid #5d422b;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: #8f672f;
+}

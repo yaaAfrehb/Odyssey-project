@@ -49,7 +49,7 @@ const stories = {
             "Reveal his name to claim glory",
             "Should have kept his mouth shut and stayed anonymous to protect his crew"
         ],
-        correctAnswer: "Should have kept his mouth shut and stayed anonymous to protect his crew",
+        correctAnswer: "Should have kept his mouth shut and stayed anonymous",
         reflection:"This shows that pride can be a dangerous thing, and that our decision to show off can have consequences for not only ourselves but for the ones around us. As Odysseus and his crew progressed, Poseidon sent relentless storms to blow them off course to delayed their return."
 
     },
@@ -57,13 +57,13 @@ const stories = {
     "Explore Aeolus's island": {
         type: "quiz",
         title: "Aeolus's Island",
-        story: "Aeolus gives Odysseus a bag containing the winds. While Odysseus sleeps, his crew opens it, believing it contains treasure, and the winds blow them away from home.",
+        story: "Aeolus gives Odysseus a bag containing the winds. Odysseus warns everyone to not open the bags and he then goes to sleep. While Odysseus sleeps, Eurylochus and the others decided to open it against his wish, believing it contains treasure, and the winds blow them away from home.",
         question: "What does this event reveal?",
         choices: [
-            "Suspicion and poor decisions can undo progress",
+            "Trust is important",
             "Warnings are never important"
         ],
-        correctAnswer: "Suspicion and poor decisions can undo progress",
+        correctAnswer: "Trust is important",
         reflection:"This emphasizes the importance of trust and communication within a team and how curiosity isn't always a good thing like the saying goes: 'Curiosity killed the cat.'Even though we may be curious and have good intentions, we must be careful and think about the consequences."
     },
 
@@ -86,9 +86,9 @@ const stories = {
         question: "Does knowing about danger guarantee that we can avoid it?",
         choices: [
             "Yes, knowledge prevents every mistake",
-            "No, people must still make difficult decisions"
+            "No, it doesn't"
         ],
-        correctAnswer: "No, people must still make difficult decisions",
+        correctAnswer: "No, it doesn't",
         reflection:"Knowing about danger doesn't guarantee that things will go right if we do the right things. Life is unpredictable and it isn't expected to go along with our plan, so the best thing is to prepare for the worst and hope for the best."
     },
 
@@ -102,7 +102,7 @@ const stories = {
             "Good leaders can always save everyone"
         ],
         correctAnswer: "Leaders sometimes face choices with no perfect solution",
-        reflection:"To be a leader, you have to have be able to make decisions that may not be the best for everyone."
+        reflection:"To be a leader, you have to have be able to make decisions that may not be the best for everyone and that's okay. Are you even a leader if you make everyone happy all the time?"
     },
 
     "Explore the Cattle of the Sun(Thrinacia)": {
@@ -141,7 +141,7 @@ const stories = {
             "Hospitality can help people in need",
             "Strangers never deserve kindness"
         ],
-        correctAnswer: "Hospitality can help people in need.",
+        correctAnswer: "Hospitality can help people in need",
         reflection:"The Phaeacians show him kindness and hospitality, helping him return home per tradition, but the moral still stands: treating strangers with kindness can be really helpful because you never know what someone's going through. "
     },  
 
@@ -156,6 +156,7 @@ const stories = {
         ],
         correctAnswer: "Whether revenge and justice are always the same",
         reflection:"Justice and revenge can seem similar, but I believe the difference lies within the intention behind our actions. Justice means holding people accountable for their actions, like the suitors faced. However, justice can become revenge when it shifts from holding someone accountable to deliberately hurting them out of anger. This makes me questions whether Odysseus was seeking justice, revenge, or both."
+       
     }
 };
 
@@ -286,6 +287,18 @@ function showFeedback(data) {
     });
 
     popupChoices.appendChild(backButton);
+
+    if (data.title === "Ithaca: The Return") {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Continue to Conclusion →";
+    nextButton.className = "next-button";
+
+    nextButton.addEventListener("click", () => {
+        window.location.href = "conclusion.html";
+    });
+
+    popupChoices.appendChild(nextButton);
+}
 }
 
 // Open a location's popup
