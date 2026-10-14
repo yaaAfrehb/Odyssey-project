@@ -13,6 +13,7 @@ startButton.addEventListener("click", () => {
 // Story information for each location
 const stories = {
     "Explore Troy": {
+        type: "quiz",
         title: "The Beginning: Troy",
         story: "After ten years of fighting in the Trojan War, Odysseus begins his dangerous journey home to Ithaca. His journey will test his leadership, perseverance, and identity.",
         question: "What will Odysseus need most on his journey?",
@@ -21,21 +22,26 @@ const stories = {
             "Intelligence and self-control",
             "Both, depending on the challenge"
         ],
-        correctAnswer: "Both, depending on the challenge"
+        correctAnswer: "Both, depending on the challenge",
+        reflection:"Along the way, Odysseus will face challenges that will require him to use both his physical and mental prowess. (yes I know that word). By using these abilities, he'll be able to overcome obstacles in his way with the gods' help and interference. This reveals that human nature and life are complex, showing that every situation requires something different to overcome."
+
     },
 
     "Explore the Lotus Eaters": {
+        type: "quiz",
         title: "The Lotus Eaters",
-        story: "Some of Odysseus's men eat the lotus and lose their desire to return home. Odysseus must bring them back to the ship.",
+        story: "Some of Odysseus's men eat the lotus and lose their desire to return home. Odysseus drags them back— ignoring their pleas to stay, ties them down, and orders to leave the island.",
         question: "What does this challenge reveal?",
         choices: [
             "Temptation can distract people from their goals",
             "The journey home is unimportant"
         ],
-        correctAnswer: "Temptation can distract people from their goals"
+        correctAnswer: "Temptation can distract people from their goals",
+        reflection:"This situation shows that as humans, we can be easily distracted and lose track of what's important and the importance of keeping our goals in mind."
     },
 
     "Explore the Cyclops": {
+        type: "quiz",
         title: "The Cyclops",
         story: "Odysseus escapes Polyphemus, but he reveals his identity out of pride. Polyphemus then calls on Poseidon to punish him.",
         question: "What should Odysseus have done after escaping?",
@@ -47,6 +53,7 @@ const stories = {
     },
 
     "Explore Aeolus's island": {
+        type: "quiz",
         title: "Aeolus's Island",
         story: "Aeolus gives Odysseus a bag containing the winds. While Odysseus sleeps, his crew opens it, believing it contains treasure, and the winds blow them away from home.",
         question: "What does this event reveal?",
@@ -58,6 +65,7 @@ const stories = {
     },
 
     "Explore Circe's island(Aeaea)": {
+        type: "reflection",
         title: "Circe's Island",
         story: "Circe transforms Odysseus's men into pigs. With help from Hermes, Odysseus confronts her and saves his crew. They stay for a time before continuing their journey.",
         question: "Why does Odysseus eventually continue?",
@@ -69,6 +77,7 @@ const stories = {
     },
 
     "Explore the Underworld": {
+        type:"reflection",
         title: "The Underworld",
         story: "Odysseus visits the Underworld to seek advice from the prophet Tiresias, who warns him about dangers ahead, including the cattle of Helios.",
         question: "Does knowing about danger guarantee that we can avoid it?",
@@ -80,6 +89,7 @@ const stories = {
     },
 
     "See Scylla and Charybdis": {
+        type: "reflection",
         title: "Scylla and Charybdis",
         story: "Odysseus must steer between Scylla, a monster who seizes sailors, and Charybdis, a deadly whirlpool. He cannot avoid every danger.",
         question: "What does this reveal about leadership?",
@@ -90,7 +100,8 @@ const stories = {
         correctAnswer: "Leaders sometimes face choices with no perfect solution"
     },
 
-    "Explore the Cattle of the Sun": {
+    "Explore the Cattle of the Sun(Thrinacia)": {
+        type: "reflection",
         title: "Cattle of the Sun",
         story: "Despite warnings not to harm Helios's sacred cattle, Odysseus's hungry crew kills and eats them. Their disobedience brings disaster.",
         question: "What does the crew's decision reveal?",
@@ -101,7 +112,8 @@ const stories = {
         correctAnswer: "Choices can have serious consequences"
     },
 
-    "Explore Calypso's island": {
+    "Explore Calypso's island(Ogygia)": {
+        type:"quiz",
         title: "Calypso's Island",
         story: "Calypso offers Odysseus immortality if he stays with her. He longs to return to Ithaca and reunite with his family.",
         question: "Why does Odysseus want to return home?",
@@ -112,7 +124,8 @@ const stories = {
         correctAnswer: "His family and identity matter to him"
     },
 
-    "Explore the Phaeacians": {
+    "Explore the Phaeacians(Schria)": {
+        type: "quiz",
         title: "The Phaeacians",
         story: "The Phaeacians welcome Odysseus and help him return to Ithaca, showing kindness to a stranger in need.",
         question: "What do their actions reveal about humanity?",
@@ -120,10 +133,11 @@ const stories = {
             "Hospitality can help people in need",
             "Strangers never deserve kindness"
         ],
-        correctAnswer: "Hospitality can help people in need"
+        correctAnswer: "Hospitality can help people in need."
     },
 
     "Explore Ithaca": {
+        type: "quiz",
         title: "Ithaca: The Return",
         story: "Odysseus finally returns home, where suitors have taken over his household. His return tests his identity, loyalty, and ideas of justice.",
         question: "What difficult issue does his return raise?",
@@ -160,12 +174,12 @@ const journeyOrder = [
     "Explore the Lotus Eaters",
     "Explore the Cyclops",
     "Explore Aeolus's island",
-    "Explore Circe's island",
+    "Explore Circe's island(Aeaea)",
     "Explore the Underworld",
     "See Scylla and Charybdis",
-    "Explore the Cattle of the Sun",
-    "Explore Calypso's island",
-    "Explore the Phaeacians",
+    "Explore the Cattle of the Sun(Thrinacia)",
+    "Explore Calypso's island(Ogygia)",
+    "Explore the Phaeacians(Schria)",
     "Explore Ithaca"
 ];
 
@@ -200,6 +214,8 @@ function showMapElements() {
 }
 
 // Display the answer choices
+
+
 function showChoices(data) {
     popupQuestion.textContent = data.question;
     popupChoices.replaceChildren();
@@ -209,39 +225,46 @@ function showChoices(data) {
         button.className = "popup-choice";
         button.textContent = choice;
 
-        
-        
-      
-        
-    button.addEventListener("click", () => {
-        if (choice === data.correctAnswer) {
-            button.textContent = "✓ " + choice + " — Correct!";
-            button.style.backgroundColor = "#6b9e68";
+        button.addEventListener("click", () => {
+            if (choice === data.correctAnswer) {
+                button.textContent = "✓ " + choice + " — Correct!";
+                button.style.backgroundColor = "#6b9e68";
 
-            // Show the reflection after a short pause
-            setTimeout(() => {
-                showFeedback(data);
-            }, 800);
+                setTimeout(() => {
+                    showFeedback(data);
+                }, 800);
+            } else {
+                button.textContent = "✗ " + choice + " — Try again!";
+                button.style.backgroundColor = "#bd6960";
+            }
+        });
 
-        } else {
-            button.textContent = "✗ " + choice + " — Try again!";
-            button.style.backgroundColor = "#bd6960";
-        }
-    });
-
-  
         popupChoices.appendChild(button);
     });
 }
 
+
+    
+
+
+function showStory(data) {
+    popupQuestion.textContent = "Reflection:";
+    popupChoices.replaceChildren();
+
+    const reflection = document.createElement("p");
+    reflection.textContent = data.reflection;
+    popupChoices.appendChild(reflection);
+}
+
+
 // Display reflection feedback
 function showFeedback(data) {
-    popupQuestion.textContent = "Think about the story";
+    popupQuestion.textContent = "My Reflection:";
     popupChoices.replaceChildren();
 
     const feedback = document.createElement("p");
     feedback.textContent =
-        "Consider how this choice connects to the themes of The Odyssey. What might the consequences reveal about human nature?";
+       data.reflection;
     popupChoices.appendChild(feedback);
 
     const backButton = document.createElement("button");
@@ -267,13 +290,19 @@ markers.forEach(marker => {
         }
         currentLocation = location;
         
-        popupTitle.textContent = data.title;
-        popupStory.textContent = data.story;
+        
+    popupTitle.textContent = data.title;
+    popupStory.textContent = data.story;
 
+    if (data.type === "reflection") {
+        showStory(data);
+    } else {
         showChoices(data);
+    }
 
-        popup.classList.remove("hidden");
-        hideMapElements();
+    popup.classList.remove("hidden");
+    hideMapElements();
+
     });
 });
 
