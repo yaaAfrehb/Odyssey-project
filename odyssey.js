@@ -47,9 +47,11 @@ const stories = {
         question: "What should Odysseus have done after escaping?",
         choices: [
             "Reveal his name to claim glory",
-            "Stay anonymous to protect his crew"
+            "Should have kept his mouth shut and stayed anonymous to protect his crew"
         ],
-        correctAnswer: "Stay anonymous to protect his crew"
+        correctAnswer: "Should have kept his mouth shut and stayed anonymous to protect his crew",
+        reflection:"This shows that pride can be a dangerous thing, and that our decision to show off can have consequences for not only ourselves but for the ones around us. As Odysseus and his crew progressed, Poseidon sent relentless storms to blow them off course to delayed their return."
+
     },
 
     "Explore Aeolus's island": {
@@ -61,7 +63,8 @@ const stories = {
             "Suspicion and poor decisions can undo progress",
             "Warnings are never important"
         ],
-        correctAnswer: "Suspicion and poor decisions can undo progress"
+        correctAnswer: "Suspicion and poor decisions can undo progress",
+        reflection:"This emphasizes the importance of trust and communication within a team and how curiosity isn't always a good thing like the saying goes: 'Curiosity killed the cat.'Even though we may be curious and have good intentions, we must be careful and think about the consequences."
     },
 
     "Explore Circe's island(Aeaea)": {
@@ -73,31 +76,33 @@ const stories = {
             "He still wants to return home",
             "He has forgotten about Ithaca"
         ],
-        correctAnswer: "He still wants to return home"
+        correctAnswer: "He still wants to return home",
+        reflection:"Odysseus's decision to leave Circe's island shows that he values his goal more than his comfort. Although he stayed longer to help his men and ended up remaining there for a whole year, he still wanted to reach home. Sometimes, we must make sacrifices and leave our comfort behind to achieve our goals."
     },
-
     "Explore the Underworld": {
-        type:"reflection",
+        type:"quiz",
         title: "The Underworld",
-        story: "Odysseus visits the Underworld to seek advice from the prophet Tiresias, who warns him about dangers ahead, including the cattle of Helios.",
+        story: "With the advice of Circe,Odysseus visits the Underworld to seek advice from the prophet Tiresias, who warns him about dangers ahead, including the cattle of Helios.",
         question: "Does knowing about danger guarantee that we can avoid it?",
         choices: [
             "Yes, knowledge prevents every mistake",
             "No, people must still make difficult decisions"
         ],
-        correctAnswer: "No, people must still make difficult decisions"
+        correctAnswer: "No, people must still make difficult decisions",
+        reflection:"Knowing about danger doesn't guarantee that things will go right if we do the right things. Life is unpredictable and it isn't expected to go along with our plan, so the best thing is to prepare for the worst and hope for the best."
     },
 
     "See Scylla and Charybdis": {
         type: "reflection",
         title: "Scylla and Charybdis",
-        story: "Odysseus must steer between Scylla, a monster who seizes sailors, and Charybdis, a deadly whirlpool. He cannot avoid every danger.",
+        story: "Odysseus must steer between Scylla, a monster who seizes sailors, and Charybdis, a deadly whirlpool. He cannot avoid every danger and he ends up losing some of his men.",
         question: "What does this reveal about leadership?",
         choices: [
             "Leaders sometimes face choices with no perfect solution",
             "Good leaders can always save everyone"
         ],
-        correctAnswer: "Leaders sometimes face choices with no perfect solution"
+        correctAnswer: "Leaders sometimes face choices with no perfect solution",
+        reflection:"To be a leader, you have to have be able to make decisions that may not be the best for everyone."
     },
 
     "Explore the Cattle of the Sun(Thrinacia)": {
@@ -109,7 +114,9 @@ const stories = {
             "Choices can have serious consequences",
             "Warnings never matter"
         ],
-        correctAnswer: "Choices can have serious consequences"
+        correctAnswer: "Choices can have serious consequences",
+        reflection:"Despite being warned by Odysseus, the crew still decided to eat the cattle, which led to their eventual demise at the hands of Zeus. Through Odysseus, we can once again recognize the unpredictability of life and human behavior, while the crew's actions emphasize the importance of respecting boundaries."
+
     },
 
     "Explore Calypso's island(Ogygia)": {
@@ -121,7 +128,8 @@ const stories = {
             "His family and identity matter to him",
             "He believes home will have no challenges"
         ],
-        correctAnswer: "His family and identity matter to him"
+        correctAnswer: "His family and identity matter to him",
+        reflection:"Odysseus has a strong sense and identity throughout his journey, he's always longing for his home and his family. All of us have that sense of belonging to a place or having the special someone. This reveals that these two things are important to us and that they can help us stay grounded when in times of uncertainty."
     },
 
     "Explore the Phaeacians(Schria)": {
@@ -133,8 +141,9 @@ const stories = {
             "Hospitality can help people in need",
             "Strangers never deserve kindness"
         ],
-        correctAnswer: "Hospitality can help people in need."
-    },
+        correctAnswer: "Hospitality can help people in need.",
+        reflection:"The Phaeacians show him kindness and hospitality, helping him return home per tradition, but the moral still stands: treating strangers with kindness can be really helpful because you never know what someone's going through. "
+    },  
 
     "Explore Ithaca": {
         type: "quiz",
@@ -145,7 +154,8 @@ const stories = {
             "Whether revenge and justice are always the same",
             "Whether family and home are unimportant"
         ],
-        correctAnswer: "Whether revenge and justice are always the same"
+        correctAnswer: "Whether revenge and justice are always the same",
+        reflection:"Justice and revenge can seem similar, but I believe the difference lies within the intention behind our actions. Justice means holding people accountable for their actions, like the suitors faced. However, justice can become revenge when it shifts from holding someone accountable to deliberately hurting them out of anger. This makes me questions whether Odysseus was seeking justice, revenge, or both."
     }
 };
 

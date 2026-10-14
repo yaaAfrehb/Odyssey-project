@@ -236,7 +236,7 @@ margin-bottom: 25px;
     opacity: 1;
 }
 
-.troy       { left: 50.05%; top: 28.57%; }
+.troy       { left: 50.25%; top: 28%; }
 .lotus      { left: 24%;  top: 90%; }
 .cyclops    { left: 40%; top: 90%; }
 .aeolus     { left: 42%; top: 80%; }
@@ -449,3 +449,4 @@ margin-bottom: 25px;
     pointer-events: none;
     cursor: not-allowed;
 }
+
