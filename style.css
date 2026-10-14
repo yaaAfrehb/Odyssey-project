@@ -458,8 +458,10 @@ margin-bottom: 25px;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .next-button:hover {
     background-color: #8f672f;
+   
 }

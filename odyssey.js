@@ -47,7 +47,7 @@ const stories = {
         question: "What should Odysseus have done after escaping?",
         choices: [
             "Reveal his name to claim glory",
-            "Should have kept his mouth shut and stayed anonymous to protect his crew"
+            "Should have kept his mouth shut and stayed anonymous"
         ],
         correctAnswer: "Should have kept his mouth shut and stayed anonymous",
         reflection:"This shows that pride can be a dangerous thing, and that our decision to show off can have consequences for not only ourselves but for the ones around us. As Odysseus and his crew progressed, Poseidon sent relentless storms to blow them off course to delayed their return."
