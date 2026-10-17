@@ -32,3 +32,5 @@ Once you do one of the two, the files should be on your laptop. If you want to e
 ```bash
 https://odysseyprojectberkoh.netlify.app/
 ```
+## Future Direction
+I'll expand this project by adding a characters page for Odysseus, Telemachus, and Penelope— maybe the gods too.
