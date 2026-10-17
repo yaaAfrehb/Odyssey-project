@@ -26,7 +26,7 @@ If you don't want to use Git and the terminal:
 2. Click **Download ZIP**
 3. Extract/ unzip the downloaded folder onto your computer.
 
-Once you do one of the two, the files should be on your laptop. If you want to edit or run the code by yourself, you can open it on a code editor like VS Code. You can also open it by clicking the 'index.html' and pressing enter or double-clicking it!
+Once you do one of the two, the files should be on your laptop. If you want to edit or run the code by yourself, you can open it on a code editor like VS Code. You can also open it by clicking 'index.html' and pressing enter or double-clicking it!
    
 ## Demo Link
 ```bash
