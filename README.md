@@ -14,7 +14,7 @@ To look and interact with a really cool, custom-made map and learn a little abou
 
 ## How to Install
 ### Option 1:
-Install Git on your laptop
+Install Git on your laptop.
 Run this command in your laptop's bulit in terminal (or **Command Prompt**/ **Powershell** for Windows):
 
 ```bash
