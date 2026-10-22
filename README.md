@@ -13,13 +13,19 @@ Some things that were challenging:
 To look and interact with a really cool, custom-made map and learn a little about how a centuries old story can still connect to us today.
 
 ## How to Install
-### Option 1:
-Install Git on your laptop.
-Run this command in your laptop's bulit in terminal (or **Command Prompt**/ **Powershell** for Windows):
+### Option 1: Git and Terminal:
+1. Install Git on your laptop
+ Create a folder or use another for this step and run this command in the terminal:
+```bash
+cd\Folder\Folder
+```
+Ex. cd\Pictures\OdysseyProject
 
+2. Run this command after:
 ```bash
 git clone https://github.com/yaaAfrehb/Odyssey-project.git
 ```
+
 ### Option 2:
 If you don't want to use Git and the terminal:
 1. Click on the Code button on the top of this repository page.
